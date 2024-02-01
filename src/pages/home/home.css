@@ -1,0 +1,19 @@
+.loginInput {
+    margin-bottom: 1em;
+}
+
+.loginForm{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 16em;
+    height: 5em;
+    padding: 2em;
+    border-radius: 2em;
+}
+
+.inputSubmit{
+    width: 8em;
+    margin-left: 5em;
+
+}
