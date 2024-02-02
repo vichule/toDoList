@@ -1,11 +1,14 @@
-import { useDispatch } from "react-redux";
-import { addUser } from "../../features/users/usersSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { addUser, getUser } from "../../features/users/usersSlice";
 import './home.css'
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 export const Home = () => {
     const dispatch = useDispatch()
     const navigator = useNavigate()
+    const users = useSelector(getUser)
+    const [userList, setUserList] = useState(users)
     const loginSubmit = (event) => {
         event.preventDefault();
         const username = event.target.username.value
@@ -13,6 +16,7 @@ export const Home = () => {
 
         console.log(`Welcome ${username} your password is ${password}`)
         dispatch(addUser({username: username, password: password}))
+        console.log(userList)
         navigator('/userpage')
     }
 

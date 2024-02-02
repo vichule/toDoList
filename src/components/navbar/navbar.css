@@ -5,30 +5,48 @@ nav{
     left: 0;
     right: 0;
     justify-content: space-between;
-    border: 3px solid #6dd5f9;
+    background-color: black;
+    z-index: 10;
+    height: 5em;
 }
 
 .userNav{
     display: flex;
     justify-content: space-between;
-    width: 10em;
+    width: 7em;
+    padding: 1em 1em 0 1em;
 }
 
 .linkContainer{
     display: flex;
     justify-content: space-between;
     width: 15em;
-    padding: 1em;
+    padding: 1.5em 1em 1em 1em;
+    background-color: #4a4a4a;
 }
 
 .NavBar{
     color: white;
 }
 
-.NavBar.active {
-    font-weight: bold;
-  }
-
 .NavBar:hover {
-    color: #02f0fb;
-  }
+    color: #e44c4c;
+    border-bottom: 5px solid black;
+}
+
+.NavBarActive {
+    color: aqua;
+}
+
+.NavBarActive:hover{
+    color: aqua;
+    border-bottom: 5px solid black;
+}
+
+
+
+
+.userNav img{
+    width: 3em;
+    height: 3em;
+}

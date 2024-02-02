@@ -1,0 +1,44 @@
+.listContainer{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.introSection{
+    margin: 5em 1em 1em 1em;
+    text-align: left;
+}
+
+
+@media (width > 650px){
+    .mainSection{
+        min-width: 30em;
+        min-height: 25em;
+    }
+
+}
+
+
+@media (width > 800px){
+    .mainSection{
+        min-width: 40em;
+        min-height: 25em;
+    }
+
+}
+
+@media (width > 1000px){
+    .mainSection{
+        min-width: 55em;
+        min-height: 30em;
+    }
+
+}
+
+@media (width > 1200px){
+    .mainSection{
+        min-width: 70em;
+        min-height: 30em;
+    }
+
+}

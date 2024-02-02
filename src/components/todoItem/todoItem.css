@@ -1,0 +1,41 @@
+.itemContainer{
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 1em;
+    padding: 1em;
+    margin: 1em;
+    max-width: 20em;
+    width: 15em;
+    min-width: 15em;
+    min-height: 15em;
+    border: 5px solid #4a4a4a;
+    background: url(src/assets/paperWall.jpg);
+    background-size: cover;
+    padding-left: 3em;
+    
+}
+
+.itemP{
+    max-width: 10em;
+    min-width: 10em;
+    word-wrap: break-word;
+    text-align: left;
+}
+
+.btnItem{
+    height: 3.5em;
+    margin-bottom: 1em;
+    width: 4em;
+    background-color: #e44c4c;
+}
+
+.btnItem:hover{
+    width: 4.5em;
+    height: 4em;
+}
+
+.btnItem img{
+    width: 1.5em;
+    height: 1.5em;
+}

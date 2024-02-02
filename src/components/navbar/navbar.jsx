@@ -11,13 +11,13 @@ export const NavBarComponent = () => {
         <>
             <nav>
                 <div className="userNav">
-                    <img src="src/assets/react.svg"/>
+                    <img src="src\assets\notes.png"/>
                     <p>{user[0].username}</p>
                 </div>
                 <div className="linkContainer">
-                <NavLink className={({ isActive }) => (isActive ? 'NavBar active' : 'NavBar')} to='/userpage'> ToDo List </NavLink> 
-                <NavLink className={({ isActive }) => (isActive ? 'NavBar active' : 'NavBar')} to='/userprojects'>Projects</NavLink>
-                <NavLink className={({ isActive }) => (isActive ? 'NavBar active' : 'NavBar')} to='/'>Log Out</NavLink>
+                <NavLink className={({ isActive }) => (isActive ? 'NavBarActive' : 'NavBar')} to='/userpage'> TODO</NavLink> 
+                <NavLink className={({ isActive }) => (isActive ? 'NavBarActive' : 'NavBar')} to='/userprojects'>PROJECTS</NavLink>
+                <NavLink className={({ isActive }) => (isActive ? 'NavBarActive' : 'NavBar')} to='/'>LOGOUT</NavLink>
                 </div>
             </nav>
         </>

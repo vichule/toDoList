@@ -42,12 +42,13 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: black;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: all ease 500ms;
 }
 button:hover {
-  border-color: #646cff;
+  border: 3px solid #182a6a;
+  transition: all ease 500ms;
 }
 button:focus,
 button:focus-visible {
