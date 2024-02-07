@@ -17,9 +17,17 @@ export const userListSlice = createSlice({
         removeToDo(state,action){
             state.data = state.data.filter((todo) => todo.id != action.payload.id)
             localStorage.setItem('userList', JSON.stringify(state.data))
+        },
+        editNote(state,action){
+            const newNotes = [...state.data]
+            const noteId = newNotes.findIndex((note) => note.id === action.payload.id)
+            const newNote = {...newNotes[noteId], text: action.payload.newText}
+            newNotes[noteId] = newNote
+            state.data = newNotes
+            localStorage.setItem('userList', JSON.stringify(state.data))
         }
     }
 })
 
-export const { addToDo, removeToDo } = userListSlice.actions
+export const { addToDo, removeToDo, editNote } = userListSlice.actions
 export const getToDoList = (state) => state.todolist.data

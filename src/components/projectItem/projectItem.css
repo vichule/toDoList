@@ -1,0 +1,8 @@
+.projectContainer{
+    background-color: gray;
+    border-radius: 2em;
+    min-height: 20em;
+    padding: 1em;
+    text-align: left;
+    margin-bottom: 2em;
+}

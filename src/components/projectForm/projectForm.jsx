@@ -1,11 +1,10 @@
-import React, {useState} from 'react';
-import { useDispatch } from 'react-redux';
-import { generateId } from '../../utilities/utilities';
-import { addToDo } from '../../features/userlist/userlistSlice';
-import './todoForm.css'
+import { useState } from "react"
+import { useDispatch } from "react-redux"
+import { addProject } from "../../features/userprojects/userProjectsSlice"
+import { generateId } from "../../utilities/utilities"
 
 
-export const ToDoFormComponent = (item) => {
+export const ProjectFormComponent = (project) =>{
     const dispatch = useDispatch()
     const [text,setText] = useState('')
     const handleTextChange = ({target})=>{
@@ -20,24 +19,25 @@ export const ToDoFormComponent = (item) => {
               id : generateId(),
               text: text
               }
-            dispatch(addToDo(item))
+            dispatch(addProject(item))
             setText('')
           }
           
       }
 
-      return (
+
+    return (
+        <>
         <form onSubmit={handleSubmit} className="todoForm">
-          <textarea
+          <input
             type="text"
-            role="input"
-            placeholder="What to do next?"
+            placeholder="Type your new project title"
             value = {text}
             onChange = {handleTextChange}
             className='toDoInput'
           />
           <input type="submit" role="submit" value="Add" className='btnAdd' />
         </form>
-      )
-
+        </>
+    )
 }
