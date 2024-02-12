@@ -13,7 +13,6 @@ export const ProjectItemComponent = (item) =>{
 
     useEffect(()=>{
         setProjectList(projects)
-        console.log(projects)
 
     },[projects])
 

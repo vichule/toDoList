@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { addUser, getUser } from "../../features/users/usersSlice";
+import { addUser, changeUsername, getUser } from "../../features/users/usersSlice";
 import './home.css'
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -16,16 +16,6 @@ export const Home = () => {
         const username = event.target.username.value
         const password = event.target.password.value
 
-        //const usernameValid = users.some((user) => user.username === users[0].username)
-
-         /*const usernameValid = users.forEach(username=>{
-            if (username.toString().match(users.username)) {
-                return true;
-              }else{
-                return false;
-              }
-          })*/
-
         let usernameValid = false;
 
         if(username === '' || password === ''){
@@ -33,23 +23,25 @@ export const Home = () => {
         }else{
             for (let i = 0; i < userList.length; i++) {
 
-                if(users[i].username === username && users[i].password === password){
+                if( username === userList[i].username &&  password === userList[i].password){
                     usernameValid = true
+                    dispatch(changeUsername({usernameLog: username}))
+                    console.log(`Welcome ${username} your password is ${password}`)
+                    navigator('/userpage')
+                    return
                     
                 }else{
                     usernameValid = false
                 }
+                 
              }
-
-             if(usernameValid){
-                console.log(`Welcome ${username} your password is ${password}`)
-                navigator('/userpage')
-
-             }else{
+             
+             if(!usernameValid){
                 Swal.fire('Username or password incorrect')
              }
             
         }
+        
         console.log(users)
         
     }
@@ -76,6 +68,7 @@ export const Home = () => {
                         Swal.fire("Please fill all the fields in order to complete the registration");
                     }else{
                         Swal.fire("User registration completed!");
+                        dispatch(changeUsername({usernameLog: formValues[0]}))
                         dispatch(addUser({username: formValues[0], password: formValues[1]}))
                         navigator('/userpage')
                     }  

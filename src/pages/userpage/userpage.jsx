@@ -15,7 +15,6 @@ export const UserPage = () => {
 
     useEffect(()=>{
         setToDoList(todos)
-        console.log(todos)
 
     },[todos])
 
